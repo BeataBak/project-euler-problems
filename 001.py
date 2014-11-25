@@ -31,4 +31,14 @@ def is_multiple(factors, n):
 
     return False
 
+def test_sum_multiples():
+    assert sum_multiples(10) == 23
+    assert sum_multiples(20) == 78
+
+def test_is_multiple():
+    assert is_multiple([5], 9) == False
+    assert is_multiple([3], 9) == True
+    assert is_multiple([9], 27) == True
+    assert is_multiple([7], 14) == True
+
 print(sum_multiples(1000))
