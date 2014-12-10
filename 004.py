@@ -16,10 +16,11 @@ def largest_palindrome(start , end):
 
     for i in range(start, end + 1):
         for j in range(start, end + 1):
-            m = i * j
+            if i <= j:
+                product = i * j
 
-            if is_palindrome(m):
-                palindromes.append(m)
+                if is_palindrome(product):
+                    palindromes.append(product)
 
     return max(palindromes)
 
