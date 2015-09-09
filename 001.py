@@ -27,26 +27,9 @@ def sum_multiples_3_and_5(n):
     )
 
 
-def is_multiple(factors, n):
-    """
-    Returns True if `n` is a multiple of any of `factors`.
-    """
-    for factor in factors:
-        if n % factor == 0:
-            return True
-
-    return False
-
-
 def test_sum_multiples():
     assert sum_multiples_3_and_5(10) == 23
     assert sum_multiples_3_and_5(20) == 78
 
-
-def test_is_multiple():
-    assert not is_multiple([5], 9)
-    assert is_multiple([3], 9)
-    assert is_multiple([9], 27)
-    assert is_multiple([7], 14)
 
 print(sum_multiples_3_and_5(1000))
