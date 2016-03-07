@@ -32,7 +32,7 @@ def lcm_iter(factors):
 
 
 def test_divible_by():
-    assert lcm_iter(range(1, 10 + 1)) == 2520
+    assert lcm_iter(range(2, 10 + 1)) == 2520
 
 
-print(lcm_iter(range(1, 20 + 1)))
+print(lcm_iter(range(2, 20 + 1)))
