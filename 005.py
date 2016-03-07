@@ -10,25 +10,29 @@ from 1 to 20?
 """
 
 from functools import reduce
-from math import gcd
+from fractions import gcd
 
 
-def divisible_by(factors):
+def lcm(x, y):
     """
-    Takes a list of integers and returns the smallest number that
+    Takes two integers and returns the `Least Common Multiple`.
+    """
+    return x * y // gcd(x, y)
+
+
+def lcm_iter(factors):
+    """
+    Takes an iterable of integers and returns the smallest number that
     can be divided by each without any remainder.
 
-    This works because:
-        lcm(x, y) == (x * y) / gcd(x, y)
-
-    And with the commutative property of multiplication:
+    The reduce works because of the commutative property of multiplication:
         lcm(x, y, z) == lcm(x, lcm(y, z))
     """
-    return reduce(lambda x, y: x * y // gcd(x, y), factors)
+    return reduce(lcm, factors)
 
 
 def test_divible_by():
-    assert divisible_by(range(1, 10 + 1)) == 2520
+    assert lcm_iter(range(1, 10 + 1)) == 2520
 
 
-print(divisible_by(range(1, 20 + 1)))
+print(lcm_iter(range(1, 20 + 1)))
